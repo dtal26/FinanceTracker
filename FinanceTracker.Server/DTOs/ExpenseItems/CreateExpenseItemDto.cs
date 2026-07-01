@@ -1,29 +1,29 @@
-using System.ComponentModel.DataAnnotations;
+п»їusing System.ComponentModel.DataAnnotations;
 
 namespace FinanceTracker.Server.DTOs.ExpenseItems
 {
     /// <summary>
-    /// DTO для создания новой статьи расхода
+    /// DTO РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕР№ СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
     /// </summary>
     public class CreateExpenseItemDto
     {
         /// <summary>
-        /// Название статьи расхода
+        /// РќР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
-        [Required(ErrorMessage = "Название статьи обязательно")]
+        [Required(ErrorMessage = "РќР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СЊРё РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ")]
         [StringLength(100, MinimumLength = 1,
-            ErrorMessage = "Название должно содержать от 1 до 100 символов")]
+            ErrorMessage = "РќР°Р·РІР°РЅРёРµ РґРѕР»Р¶РЅРѕ СЃРѕРґРµСЂР¶Р°С‚СЊ РѕС‚ 1 РґРѕ 100 СЃРёРјРІРѕР»РѕРІ")]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// ID категории, к которой относится статья
+        /// ID РєР°С‚РµРіРѕСЂРёРё, Рє РєРѕС‚РѕСЂРѕР№ РѕС‚РЅРѕСЃРёС‚СЃСЏ СЃС‚Р°С‚СЊСЏ
         /// </summary>
-        [Required(ErrorMessage = "Категория обязательна")]
-        [Range(1, int.MaxValue, ErrorMessage = "Неверный ID категории")]
+        [Required(ErrorMessage = "РљР°С‚РµРіРѕСЂРёСЏ РѕР±СЏР·Р°С‚РµР»СЊРЅР°")]
+        [Range(1, int.MaxValue, ErrorMessage = "РќРµРІРµСЂРЅС‹Р№ ID РєР°С‚РµРіРѕСЂРёРё")]
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Активна ли статья
+        /// РђРєС‚РёРІРЅР° Р»Рё СЃС‚Р°С‚СЊСЏ
         /// </summary>
         public bool IsActive { get; set; } = true;
     }

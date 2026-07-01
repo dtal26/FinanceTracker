@@ -1,49 +1,49 @@
-using FinanceTracker.Server.Models;
+п»їusing FinanceTracker.Server.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinanceTracker.Server.Models
 {
     /// <summary>
-    /// Транзакция
+    /// РўСЂР°РЅР·Р°РєС†РёСЏ
     /// </summary>
     public class Transaction
     {
         /// <summary>
-        /// Уникальный идентификатор транзакции
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         [Key]
         public int TransactionId { get; set; }
 
         /// <summary>
-        /// Дата транзакции
+        /// Р”Р°С‚Р° С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         [Required]
         [Column(TypeName = "date")]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Сумма потраченных денег
+        /// РЎСѓРјРјР° РїРѕС‚СЂР°С‡РµРЅРЅС‹С… РґРµРЅРµРі
         /// </summary>
         [Required]
         [Column(TypeName = "decimal(18,2)")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Сумма должна быть положительной")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "РЎСѓРјРјР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕР№")]
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// Комментарий к транзакции
+        /// РљРѕРјРјРµРЅС‚Р°СЂРёР№ Рє С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         [MaxLength(500)]
         public string? Comment { get; set; }
 
         /// <summary>
-        /// Ссылка на статью расхода
+        /// РЎСЃС‹Р»РєР° РЅР° СЃС‚Р°С‚СЊСЋ СЂР°СЃС…РѕРґР°
         /// </summary>
         [Required]
         public int ExpenseItemId { get; set; }
 
         /// <summary>
-        /// Навигационное свойство, ссылка на статью расхода
+        /// РќР°РІРёРіР°С†РёРѕРЅРЅРѕРµ СЃРІРѕР№СЃС‚РІРѕ, СЃСЃС‹Р»РєР° РЅР° СЃС‚Р°С‚СЊСЋ СЂР°СЃС…РѕРґР°
         /// </summary>
         [ForeignKey("ExpenseItemId")]
         public ExpenseItem? ExpenseItem { get; set; }

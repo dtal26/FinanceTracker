@@ -1,45 +1,45 @@
-using FinanceTracker.Server.Models;
+п»їusing FinanceTracker.Server.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinanceTracker.Server.Models
 {
     /// <summary>
-    /// Статья расхода
+    /// РЎС‚Р°С‚СЊСЏ СЂР°СЃС…РѕРґР°
     /// </summary>
     public class ExpenseItem
     {
         /// <summary>
-        /// Уникальный идентификатор статьи
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЃС‚Р°С‚СЊРё
         /// </summary>
         [Key]
         public int ExpenseItemId { get; set; }
 
         /// <summary>
-        /// Название статьи расхода
+        /// РќР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
         [Required]
         [MaxLength(100)]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// Ссылка на категорию
+        /// РЎСЃС‹Р»РєР° РЅР° РєР°С‚РµРіРѕСЂРёСЋ
         /// </summary>
         [Required]
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Навигационное свойство
+        /// РќР°РІРёРіР°С†РёРѕРЅРЅРѕРµ СЃРІРѕР№СЃС‚РІРѕ
         /// </summary>
         [ForeignKey("CategoryId")]
         public Category? Category { get; set; }
 
         /// <summary>
-        /// Активна ли статья
+        /// РђРєС‚РёРІРЅР° Р»Рё СЃС‚Р°С‚СЊСЏ
         /// </summary>
         public bool IsActive { get; set; } = true;
 
-        // Навигационное свойство, у статьи может быть много транзакций
+        // РќР°РІРёРіР°С†РёРѕРЅРЅРѕРµ СЃРІРѕР№СЃС‚РІРѕ, Сѓ СЃС‚Р°С‚СЊРё РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРЅРѕРіРѕ С‚СЂР°РЅР·Р°РєС†РёР№
         public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
     }
 }

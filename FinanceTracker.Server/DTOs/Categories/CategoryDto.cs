@@ -1,32 +1,32 @@
-namespace FinanceTracker.Server.DTOs.Categories
+п»їnamespace FinanceTracker.Server.DTOs.Categories
 {
     /// <summary>
-    /// DTO для отображения информации о категории расходов
+    /// DTO РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєР°С‚РµРіРѕСЂРёРё СЂР°СЃС…РѕРґРѕРІ
     /// </summary>
     public class CategoryDto
     {
         /// <summary>
-        /// Уникальный идентификатор категории
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Название категории
+        /// РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// Месячный бюджет в рублях
+        /// РњРµСЃСЏС‡РЅС‹Р№ Р±СЋРґР¶РµС‚ РІ СЂСѓР±Р»СЏС…
         /// </summary>
         public decimal MonthlyBudget { get; set; }
 
         /// <summary>
-        /// Активна ли категория
+        /// РђРєС‚РёРІРЅР° Р»Рё РєР°С‚РµРіРѕСЂРёСЏ
         /// </summary>
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Количество статей расходов в этой категории
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚Р°С‚РµР№ СЂР°СЃС…РѕРґРѕРІ РІ СЌС‚РѕР№ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public int ExpenseItemsCount { get; set; }
     }

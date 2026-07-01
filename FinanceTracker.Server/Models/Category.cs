@@ -1,38 +1,38 @@
-using System.ComponentModel.DataAnnotations;
+п»їusing System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinanceTracker.Server.Models
 {
     /// <summary>
-    /// Категория расходов
+    /// РљР°С‚РµРіРѕСЂРёСЏ СЂР°СЃС…РѕРґРѕРІ
     /// </summary>
     public class Category
     {
         /// <summary>
-        /// Уникальный идентификатор категории
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         [Key]
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Название категории
+        /// РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         [Required]
         [MaxLength(100)]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// Месячный бюджет в рублях
+        /// РњРµСЃСЏС‡РЅС‹Р№ Р±СЋРґР¶РµС‚ РІ СЂСѓР±Р»СЏС…
         /// </summary>
         [Column(TypeName = "decimal(18,2)")]
         public decimal MonthlyBudget { get; set; }
 
         /// <summary>
-        /// Активна ли категория
+        /// РђРєС‚РёРІРЅР° Р»Рё РєР°С‚РµРіРѕСЂРёСЏ
         /// </summary>
         public bool IsActive { get; set; } = true;
 
-        // Навигационное свойство, у категории может быть много статей расходов
+        // РќР°РІРёРіР°С†РёРѕРЅРЅРѕРµ СЃРІРѕР№СЃС‚РІРѕ, Сѓ РєР°С‚РµРіРѕСЂРёРё РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРЅРѕРіРѕ СЃС‚Р°С‚РµР№ СЂР°СЃС…РѕРґРѕРІ
         public ICollection<ExpenseItem> ExpenseItems { get; set; } = new List<ExpenseItem>();
     }
 }

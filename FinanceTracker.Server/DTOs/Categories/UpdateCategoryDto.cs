@@ -1,29 +1,29 @@
-using System.ComponentModel.DataAnnotations;
+п»їusing System.ComponentModel.DataAnnotations;
 
 namespace FinanceTracker.Server.DTOs.Categories
 {
     /// <summary>
-    /// DTO для обновления существующей категории расходов
+    /// DTO РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµР№ РєР°С‚РµРіРѕСЂРёРё СЂР°СЃС…РѕРґРѕРІ
     /// </summary>
     public class UpdateCategoryDto
     {
         /// <summary>
-        /// Название категории
+        /// РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
-        [Required(ErrorMessage = "Название категории обязательно")]
+        [Required(ErrorMessage = "РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ")]
         [StringLength(100, MinimumLength = 1,
-            ErrorMessage = "Название должно содержать от 1 до 100 символов")]
+            ErrorMessage = "РќР°Р·РІР°РЅРёРµ РґРѕР»Р¶РЅРѕ СЃРѕРґРµСЂР¶Р°С‚СЊ РѕС‚ 1 РґРѕ 100 СЃРёРјРІРѕР»РѕРІ")]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// Месячный бюджет в рублях
+        /// РњРµСЃСЏС‡РЅС‹Р№ Р±СЋРґР¶РµС‚ РІ СЂСѓР±Р»СЏС…
         /// </summary>
         [Range(0, double.MaxValue,
-            ErrorMessage = "Месячный бюджет не может быть отрицательным")]
+            ErrorMessage = "РњРµСЃСЏС‡РЅС‹Р№ Р±СЋРґР¶РµС‚ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј")]
         public decimal MonthlyBudget { get; set; }
 
         /// <summary>
-        /// Активна ли категория
+        /// РђРєС‚РёРІРЅР° Р»Рё РєР°С‚РµРіРѕСЂРёСЏ
         /// </summary>
         public bool IsActive { get; set; }
     }

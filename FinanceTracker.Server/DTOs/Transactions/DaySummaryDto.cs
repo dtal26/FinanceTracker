@@ -1,32 +1,32 @@
-namespace FinanceTracker.Server.DTOs.Transactions
+п»їnamespace FinanceTracker.Server.DTOs.Transactions
 {
     /// <summary>
-    /// DTO для отображения сводки по дню
+    /// DTO РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРІРѕРґРєРё РїРѕ РґРЅСЋ
     /// </summary>
     public class DaySummaryDto
     {
         /// <summary>
-        /// Дата
+        /// Р”Р°С‚Р°
         /// </summary>
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Общая сумма трат за день
+        /// РћР±С‰Р°СЏ СЃСѓРјРјР° С‚СЂР°С‚ Р·Р° РґРµРЅСЊ
         /// </summary>
         public decimal TotalAmount { get; set; }
 
         /// <summary>
-        /// Цвет стикера
+        /// Р¦РІРµС‚ СЃС‚РёРєРµСЂР°
         /// </summary>
         public string Sticker { get; set; } = string.Empty;
 
         /// <summary>
-        /// Сообщение о статусе дня
+        /// РЎРѕРѕР±С‰РµРЅРёРµ Рѕ СЃС‚Р°С‚СѓСЃРµ РґРЅСЏ
         /// </summary>
         public string Message { get; set; } = string.Empty;
 
         /// <summary>
-        /// Количество транзакций за день
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ С‚СЂР°РЅР·Р°РєС†РёР№ Р·Р° РґРµРЅСЊ
         /// </summary>
         public int TransactionCount { get; set; }
     }

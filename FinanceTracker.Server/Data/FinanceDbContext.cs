@@ -1,10 +1,10 @@
-using FinanceTracker.Server.Models;
+п»їusing FinanceTracker.Server.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceTracker.Server.Data
 {
     /// <summary>
-    /// Контекст базы данных для Entity Framework Core
+    /// РљРѕРЅС‚РµРєСЃС‚ Р±Р°Р·С‹ РґР°РЅРЅС‹С… РґР»СЏ Entity Framework Core
     /// </summary>
     public class FinanceDbContext : DbContext
     {
@@ -14,22 +14,22 @@ namespace FinanceTracker.Server.Data
         }
 
         /// <summary>
-        /// Таблица категорий расходов
+        /// РўР°Р±Р»РёС†Р° РєР°С‚РµРіРѕСЂРёР№ СЂР°СЃС…РѕРґРѕРІ
         /// </summary>
         public DbSet<Category> Categories { get; set; }
 
         /// <summary>
-        /// Таблица статей расходов
+        /// РўР°Р±Р»РёС†Р° СЃС‚Р°С‚РµР№ СЂР°СЃС…РѕРґРѕРІ
         /// </summary>
         public DbSet<ExpenseItem> ExpenseItems { get; set; }
 
         /// <summary>
-        /// Таблица транзакций
+        /// РўР°Р±Р»РёС†Р° С‚СЂР°РЅР·Р°РєС†РёР№
         /// </summary>
         public DbSet<Transaction> Transactions { get; set; }
 
         /// <summary>
-        /// Настройка связей между таблицами и дополнительных правил
+        /// РќР°СЃС‚СЂРѕР№РєР° СЃРІСЏР·РµР№ РјРµР¶РґСѓ С‚Р°Р±Р»РёС†Р°РјРё Рё РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РїСЂР°РІРёР»
         /// </summary>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,11 +47,11 @@ namespace FinanceTracker.Server.Data
                 .HasForeignKey(t => t.ExpenseItemId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Индекс для быстрого поиска транзакций по дате
+            // РРЅРґРµРєСЃ РґР»СЏ Р±С‹СЃС‚СЂРѕРіРѕ РїРѕРёСЃРєР° С‚СЂР°РЅР·Р°РєС†РёР№ РїРѕ РґР°С‚Рµ
             modelBuilder.Entity<Transaction>()
                 .HasIndex(t => t.Date);
 
-            // Индекс для быстрого поиска транзакций по статье
+            // РРЅРґРµРєСЃ РґР»СЏ Р±С‹СЃС‚СЂРѕРіРѕ РїРѕРёСЃРєР° С‚СЂР°РЅР·Р°РєС†РёР№ РїРѕ СЃС‚Р°С‚СЊРµ
             modelBuilder.Entity<Transaction>()
                 .HasIndex(t => t.ExpenseItemId);
         }

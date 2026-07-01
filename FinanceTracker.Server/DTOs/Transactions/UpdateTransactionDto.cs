@@ -1,35 +1,35 @@
-using System.ComponentModel.DataAnnotations;
+п»їusing System.ComponentModel.DataAnnotations;
 
 namespace FinanceTracker.Server.DTOs.Transactions
 {
     /// <summary>
-    /// DTO для обновления транзакции
+    /// DTO РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ С‚СЂР°РЅР·Р°РєС†РёРё
     /// </summary>
     public class UpdateTransactionDto
     {
         /// <summary>
-        /// Дата транзакции
+        /// Р”Р°С‚Р° С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
-        [Required(ErrorMessage = "Дата транзакции обязательна")]
+        [Required(ErrorMessage = "Р”Р°С‚Р° С‚СЂР°РЅР·Р°РєС†РёРё РѕР±СЏР·Р°С‚РµР»СЊРЅР°")]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Сумма потраченных денег
+        /// РЎСѓРјРјР° РїРѕС‚СЂР°С‡РµРЅРЅС‹С… РґРµРЅРµРі
         /// </summary>
-        [Required(ErrorMessage = "Сумма обязательна")]
-        [Range(0.01, 1000000, ErrorMessage = "Сумма должна быть от 0.01 до 1 000 000 рублей")]
+        [Required(ErrorMessage = "РЎСѓРјРјР° РѕР±СЏР·Р°С‚РµР»СЊРЅР°")]
+        [Range(0.01, 1000000, ErrorMessage = "РЎСѓРјРјР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕС‚ 0.01 РґРѕ 1 000 000 СЂСѓР±Р»РµР№")]
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// Комментарий к транзакции
+        /// РљРѕРјРјРµРЅС‚Р°СЂРёР№ Рє С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
-        [StringLength(500, ErrorMessage = "Комментарий не должен превышать 500 символов")]
+        [StringLength(500, ErrorMessage = "РљРѕРјРјРµРЅС‚Р°СЂРёР№ РЅРµ РґРѕР»Р¶РµРЅ РїСЂРµРІС‹С€Р°С‚СЊ 500 СЃРёРјРІРѕР»РѕРІ")]
         public string? Comment { get; set; }
 
         /// <summary>
-        /// ID статьи расхода
+        /// ID СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
-        [Range(1, int.MaxValue, ErrorMessage = "Неверный ID статьи расхода")]
+        [Range(1, int.MaxValue, ErrorMessage = "РќРµРІРµСЂРЅС‹Р№ ID СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°")]
         public int? ExpenseItemId { get; set; }
     }
 }

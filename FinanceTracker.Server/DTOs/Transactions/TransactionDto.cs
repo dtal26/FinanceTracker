@@ -1,47 +1,47 @@
-namespace FinanceTracker.Server.DTOs.Transactions
+п»їnamespace FinanceTracker.Server.DTOs.Transactions
 {
     /// <summary>
-    /// DTO для отображения информации о транзакции
+    /// DTO РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С‚СЂР°РЅР·Р°РєС†РёРё
     /// </summary>
     public class TransactionDto
     {
         /// <summary>
-        /// Уникальный идентификатор транзакции
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         public int TransactionId { get; set; }
 
         /// <summary>
-        /// Дата транзакции
+        /// Р”Р°С‚Р° С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Сумма потраченных денег
+        /// РЎСѓРјРјР° РїРѕС‚СЂР°С‡РµРЅРЅС‹С… РґРµРЅРµРі
         /// </summary>
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// Комментарий к транзакции
+        /// РљРѕРјРјРµРЅС‚Р°СЂРёР№ Рє С‚СЂР°РЅР·Р°РєС†РёРё
         /// </summary>
         public string? Comment { get; set; }
 
         /// <summary>
-        /// ID статьи расхода
+        /// ID СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
         public int ExpenseItemId { get; set; }
 
         /// <summary>
-        /// Название статьи расхода
+        /// РќР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
         public string ExpenseItemName { get; set; } = string.Empty;
 
         /// <summary>
-        /// ID категории
+        /// ID РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Название категории
+        /// РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public string CategoryName { get; set; } = string.Empty;
     }

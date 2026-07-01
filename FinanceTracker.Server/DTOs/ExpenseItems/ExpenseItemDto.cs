@@ -1,37 +1,37 @@
-namespace FinanceTracker.Server.DTOs.ExpenseItems
+п»їnamespace FinanceTracker.Server.DTOs.ExpenseItems
 {
     /// <summary>
-    /// DTO для отображения информации о статье расхода
+    /// DTO РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃС‚Р°С‚СЊРµ СЂР°СЃС…РѕРґР°
     /// </summary>
     public class ExpenseItemDto
     {
         /// <summary>
-        /// Уникальный идентификатор статьи
+        /// РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЃС‚Р°С‚СЊРё
         /// </summary>
         public int ExpenseItemId { get; set; }
 
         /// <summary>
-        /// Название статьи расхода
+        /// РќР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СЊРё СЂР°СЃС…РѕРґР°
         /// </summary>
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// ID категории, к которой относится статья
+        /// ID РєР°С‚РµРіРѕСЂРёРё, Рє РєРѕС‚РѕСЂРѕР№ РѕС‚РЅРѕСЃРёС‚СЃСЏ СЃС‚Р°С‚СЊСЏ
         /// </summary>
         public int CategoryId { get; set; }
 
         /// <summary>
-        /// Название категории
+        /// РќР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
         /// </summary>
         public string CategoryName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Активна ли статья
+        /// РђРєС‚РёРІРЅР° Р»Рё СЃС‚Р°С‚СЊСЏ
         /// </summary>
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Количество транзакций по этой статье
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ С‚СЂР°РЅР·Р°РєС†РёР№ РїРѕ СЌС‚РѕР№ СЃС‚Р°С‚СЊРµ
         /// </summary>
         public int TransactionsCount { get; set; }
     }
